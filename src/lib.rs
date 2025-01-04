@@ -66,7 +66,6 @@ where
         self.set.is_empty()
     }
 
-
     /// Returns an iterator over the elements in insertion order.
     pub fn iter(&self) -> SeqSetIter<'_, T> {
         SeqSetIter {
@@ -81,14 +80,12 @@ where
         }
     }
 
-
     /// Clears all elements from the set.
     pub fn clear(&mut self) {
         self.set.clear();
         self.vec.clear();
     }
 }
-
 
 pub struct SeqSetIter<'a, T>
 where
@@ -119,7 +116,6 @@ where
         self.iter()
     }
 }
-
 
 pub struct SeqSetIterMut<'a, T>
 where
