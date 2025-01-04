@@ -1,0 +1,9 @@
+[package]
+name = "seq-set"
+version = "0.0.1"
+edition = "2021"
+description = "A Set collection that maintains insertion order."
+license = "MIT"
+repository = "https://github.com/piot/seq-set"
+
+[dependencies]
