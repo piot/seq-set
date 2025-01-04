@@ -85,6 +85,10 @@ where
         self.set.clear();
         self.vec.clear();
     }
+
+    pub fn to_vec(&self) -> Vec<T> {
+        self.vec.clone()
+    }
 }
 
 pub struct SeqSetIter<'a, T>
@@ -176,5 +180,28 @@ where
         SeqSetIntoIter {
             inner: self.vec.into_iter(),
         }
+    }
+}
+
+
+impl<T> FromIterator<T> for SeqSet<T>
+where
+    T: Eq + Hash + Clone,
+{
+    fn from_iter<I: IntoIterator<Item = T>>(iter: I) -> Self {
+        let mut seq_set = SeqSet::new();
+        for item in iter {
+            seq_set.insert(item);
+        }
+        seq_set
+    }
+}
+
+impl<T> From<SeqSet<T>> for Vec<T>
+where
+    T: Eq + Hash + Clone,
+{
+    fn from(set: SeqSet<T>) -> Self {
+        set.vec
     }
 }

@@ -198,3 +198,24 @@ fn into_iter_mutable_references() {
     let elements: Vec<i32> = set.iter().cloned().collect();
     assert_eq!(elements, vec![12, 13, 14]);
 }
+
+#[test]
+fn from_iterator() {
+    let items = vec![
+        "apple".to_string(),
+        "banana".to_string(),
+        "apple".to_string(), // Intentional duplicate
+        "orange".to_string(),
+    ];
+    let seq_set: SeqSet<String> = items.into_iter().collect();
+
+    assert_eq!(seq_set.len(), 3);
+
+    let expected = vec![
+        "apple".to_string(),
+        "banana".to_string(),
+        "orange".to_string(),
+    ];
+
+    assert_eq!(seq_set.to_vec(), expected);
+}
