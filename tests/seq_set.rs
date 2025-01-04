@@ -8,7 +8,7 @@ struct Point {
 }
 
 #[test]
-fn test_insert_and_contains() {
+fn insert_and_contains() {
     let mut set = SeqSet::new();
     assert!(set.insert(1));
     assert!(set.insert(2));
@@ -25,7 +25,7 @@ fn test_insert_and_contains() {
 }
 
 #[test]
-fn test_remove() {
+fn remove() {
     let mut set = SeqSet::new();
     set.insert("apple");
     set.insert("banana");
@@ -42,7 +42,7 @@ fn test_remove() {
 }
 
 #[test]
-fn test_iteration_order() {
+fn iteration_order() {
     let mut set = SeqSet::new();
     set.insert("first");
     set.insert("second");
@@ -53,7 +53,7 @@ fn test_iteration_order() {
 }
 
 #[test]
-fn test_remove_and_iterate() {
+fn remove_and_iterate() {
     let mut set = SeqSet::new();
     set.insert("apple");
     set.insert("banana");
@@ -67,7 +67,7 @@ fn test_remove_and_iterate() {
 }
 
 #[test]
-fn test_clear() {
+fn clear() {
     let mut set = SeqSet::new();
     set.insert(10);
     set.insert(20);
@@ -84,7 +84,7 @@ fn test_clear() {
 }
 
 #[test]
-fn test_with_custom_struct() {
+fn with_custom_struct() {
     let mut set = SeqSet::new();
 
     let p1 = Point { x: 1, y: 2 };
@@ -110,14 +110,14 @@ fn test_with_custom_struct() {
 }
 
 #[test]
-fn test_iterate_empty_set() {
+fn iterate_empty_set() {
     let set: SeqSet<i32> = SeqSet::new();
     let elements: Vec<&i32> = set.iter().collect();
     assert!(elements.is_empty());
 }
 
 #[test]
-fn test_multiple_insertions_and_removals() {
+fn multiple_insertions_and_removals() {
     let mut set = SeqSet::new();
 
     for i in 1..=5 {
@@ -138,7 +138,7 @@ fn test_multiple_insertions_and_removals() {
 }
 
 #[test]
-fn test_insert_remove_insert() {
+fn insert_remove_insert() {
     let mut set = SeqSet::new();
 
     assert!(set.insert("alpha"));
@@ -155,7 +155,7 @@ fn test_insert_remove_insert() {
 }
 
 #[test]
-fn test_into_iter_consuming() {
+fn into_iter_consuming() {
     let mut set = SeqSet::new();
     set.insert(1);
     set.insert(2);
@@ -169,7 +169,7 @@ fn test_into_iter_consuming() {
 }
 
 #[test]
-fn test_into_iter_references() {
+fn into_iter_references() {
     let mut set = SeqSet::new();
     set.insert("apple");
     set.insert("banana");
@@ -185,7 +185,7 @@ fn test_into_iter_references() {
 }
 
 #[test]
-fn test_into_iter_mutable_references() {
+fn into_iter_mutable_references() {
     let mut set = SeqSet::new();
     set.insert(11);
     set.insert(12);
